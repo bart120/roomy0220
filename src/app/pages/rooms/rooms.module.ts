@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TopFiveComponent } from './top-five-room/top-five-room.component';
 import { CreateRoomComponent } from './create-room/create-room.component';
 import { ListRoomsComponent } from './list-rooms/list-rooms.component';
+import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
     declarations: [
@@ -10,7 +11,10 @@ import { ListRoomsComponent } from './list-rooms/list-rooms.component';
         CreateRoomComponent,
         ListRoomsComponent
     ],
-    imports: [CommonModule],
+    imports: [
+        CommonModule,
+        MaterialModule
+    ],
     exports: [
         TopFiveComponent
     ],

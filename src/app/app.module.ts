@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { RoomsModule } from './pages/rooms/rooms.module';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { RoomsModule } from './pages/rooms/rooms.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
+    MaterialModule,
     RoomsModule
   ],
   providers: [],
