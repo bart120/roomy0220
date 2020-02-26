@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RoomService } from 'src/app/services/room.service';
 
 @Component({
     selector: 'app-top-five-room',
@@ -8,13 +9,20 @@ export class TopFiveComponent implements OnInit {
 
     rooms: Array<any>;
 
-    constructor() { }
+    constructor(private serv: RoomService) { }
 
     ngOnInit(): void {
-        this.rooms = [
+        /*this.rooms = [
             { name: 'Pegase', image: 'Pegase.jpg' },
             { name: 'Calliope', image: 'Calliope.jpg' },
             { name: 'Uranie', image: 'Uranie.jpg' }
-        ];
+        ];*/
+
+        this.serv.getTopFive().subscribe(
+            data => {
+                this.rooms = data;
+            }
+        );
+
     }
 }
