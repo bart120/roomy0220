@@ -6,6 +6,7 @@ import { ListRoomsComponent } from './list-rooms/list-rooms.component';
 import { MaterialModule } from 'src/app/material.module';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
     imports: [
         CommonModule,
         RouterModule,
-        MaterialModule
+        MaterialModule,
+        ReactiveFormsModule
     ],
     exports: [
         TopFiveComponent

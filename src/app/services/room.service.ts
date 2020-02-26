@@ -32,10 +32,14 @@ export class RoomService {
     }
 
     getTopFive(): Observable<Array<Room>> {
-        return timer(0, 3000).pipe(
+        return timer(0, 30000).pipe(
             mergeMap(() => this.http.get<Array<Room>>(environment.URL_ROOMS).pipe(
                 map(data => data.sort((a, b) => a.price < b.price ? 1 : -1).slice(0, 5))
             ))
         );
+    }
+
+    insert(room: Room): Observable<Room> {
+        return this.http.post<Room>(environment.URL_ROOMS, room);
     }
 }
