@@ -1,14 +1,25 @@
 <h1>Login</h1>
 
-<form class="log">
-    <mat-form-field>
-        <input matInput type="email" placeholder="Login" #email (keyup.enter)="password.focus()" />
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput type="password" placeholder="Mot de passe" #password
-            (keyup.enter)="onLogin(email.value, $event)" />
-    </mat-form-field>
+
+
+<div *ngIf="user; else nolog">
+    Vous etes connecté sous le nom {{user.name}}
     <div>
-        <button type="button" mat-button (click)="onLogin(email.value, $event)">Se connecter</button>
+        <button mat-button color="primary" type="button" (click)="logout()">Se déconnecter</button>
     </div>
-</form>
+</div>
+<ng-template #nolog>
+    <form class="log">
+        <mat-form-field>
+            <input matInput type="email" placeholder="Login" #email (keyup.enter)="password.focus()" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" placeholder="Mot de passe" #password
+                (keyup.enter)="onLogin(email.value, $event)" />
+        </mat-form-field>
+        <div>
+            <button type="button" mat-button (click)="onLogin(email.value, $event)">Se connecter</button>
+        </div>
+    </form>
+    Vous n'etes pas connecté.
+</ng-template>
