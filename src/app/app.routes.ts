@@ -3,6 +3,7 @@ import { ListRoomsComponent } from './pages/rooms/list-rooms/list-rooms.componen
 import { CreateRoomComponent } from './pages/rooms/create-room/create-room.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { NotFoundComponent } from './pages/home/not-found/not-found.component';
+import { RoomDetailComponent } from './pages/rooms/room-detail/room-detail.component';
 
 export const APP_ROUTES: Routes = [
 
@@ -11,7 +12,8 @@ export const APP_ROUTES: Routes = [
     {
         path: 'rooms', children: [
             { path: 'list', component: ListRoomsComponent },
-            { path: 'create', component: CreateRoomComponent }
+            { path: 'create', component: CreateRoomComponent },
+            { path: 'detail/:id', component: RoomDetailComponent }
         ]
     },
     { path: 'home', component: HomeComponent },

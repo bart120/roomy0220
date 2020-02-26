@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
+import { MaterialModule } from 'src/app/material.module';
 
 const ROUTES: Routes = [
   { path: 'login', component: LoginComponent }
@@ -11,7 +12,8 @@ const ROUTES: Routes = [
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(ROUTES)
+    RouterModule.forChild(ROUTES),
+    MaterialModule
   ]
 })
 export class AuthenticationModule { }

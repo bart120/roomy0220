@@ -9,6 +9,8 @@ import { RoomsModule } from './pages/rooms/rooms.module';
 import { MaterialModule } from './material.module';
 import { APP_ROUTES } from './app.routes';
 import { HomeModule } from './pages/home/home.module';
+import { HttpClientModule } from '@angular/common/http';
+//import { RoomService } from './services/room.service';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,12 @@ import { HomeModule } from './pages/home/home.module';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(APP_ROUTES),
+    HttpClientModule,
     MaterialModule,
     HomeModule,
     RoomsModule
   ],
-  providers: [],
+  providers: [/*RoomService*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

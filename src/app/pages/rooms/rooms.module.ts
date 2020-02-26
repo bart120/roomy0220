@@ -4,15 +4,19 @@ import { TopFiveComponent } from './top-five-room/top-five-room.component';
 import { CreateRoomComponent } from './create-room/create-room.component';
 import { ListRoomsComponent } from './list-rooms/list-rooms.component';
 import { MaterialModule } from 'src/app/material.module';
+import { RoomDetailComponent } from './room-detail/room-detail.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
         TopFiveComponent,
         CreateRoomComponent,
-        ListRoomsComponent
+        ListRoomsComponent,
+        RoomDetailComponent
     ],
     imports: [
         CommonModule,
+        RouterModule,
         MaterialModule
     ],
     exports: [
